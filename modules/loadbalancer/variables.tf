@@ -25,7 +25,7 @@ variable "lb_tags" {
 
 
 
-# target group variables *******************************************************************************
+# target group variables 
 variable "tg_name" {
   type = string
 }
@@ -65,7 +65,7 @@ variable "tg_matcher" {
 variable "tg_tags" {
   type = map(string)
 }
-# listener varibales ************************************************************************************
+# listener varibales 
 variable "listener_port" {
   type = number
 }

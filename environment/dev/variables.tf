@@ -1,5 +1,5 @@
 
-# *****************************************************VPC config variables *********************************
+#VPC configuration variables 
 variable "cidr_block_vpc" {
   type = string
 }
@@ -14,7 +14,7 @@ variable "enable_dns_support" {
 variable "name" {
   type = string
 }
-# *********************************************security group*************************************************
+# security group variables
 variable "security_group_name" {
   type = string
 }
@@ -55,7 +55,7 @@ variable "traffic_ipv6_cidr_block" {
 variable "traffic_ipv6_ip_protocol" {
   type = string
 }
-#****************************************************** EC2 config variables *********************************
+#EC2 config variables
 
 variable "count" {
   type = number
@@ -120,7 +120,7 @@ variable "Environment" {
   type = string
 }
 
-# ***********************************************Subnet config varibales *******************************
+#Subnet config varibales
 variable "count" {
   type = string
 }
@@ -135,10 +135,7 @@ variable "availability_zone" {
   type = string
 }
 
-
-
-# ******************************************************************************************************
-# ***************************************************lunch template ************************************
+#lunch template 
 variable "name_prefix" {
   type = string
 }
@@ -187,7 +184,7 @@ variable "resource_type" {
   type = string
 }
 
-# **************************************auto scaling *****************************************************
+#Auto scaling
 
 variable "name" {
   type = string
@@ -221,7 +218,7 @@ variable "create_before_destroy" {
   type = bool
 }
 
-# ****************************************************nat_gateway*********************************************
+#Nat_gateway
 variable "tags_nat_gateway" {
   type = map(string)
 }
@@ -237,7 +234,7 @@ variable "for_each_nat_gateway" {
 variable "private_subnet_ids_nat_gateway" {
   type = set(string)
 }
-# ******************************************************route table *****************************************
+#Route table
 variable "vpc_id_route_table" {
   type = string
 }
@@ -254,16 +251,15 @@ variable "tags_route_table" {
   type = map(string)
 }
 
-# ***********************************************************************************************************
-# internet_gateway*******************************************************************************************
+#Internet_gateway
 variable "vpc_id_internet_gateway" {
   type = string
 }
 variable "tags_internet_gateway" {
   type = map(string)
 }
-# ***********************************************************************************************************
-# loadbalancer***********************************************************************************************
+
+#Loadbalancer
 variable "lb_name" {
   type = string
 }
@@ -342,7 +338,7 @@ variable "listener_certificate_arn" {
 variable "listener_type" {
   type = string
 }
-# ***********************************************************************************************************
+
 # SSH -KEY NAME
 variable "ssh_key_name" {
   type = string
@@ -350,8 +346,8 @@ variable "ssh_key_name" {
 variable "public_key" {
   type = string
 }
-# **********************************************************************************************************
-# database template variables are here
+
+# database template variables
 variable "database_cluster_identifier" {
   type = string
 }
@@ -392,4 +388,3 @@ variable "database_instance_identifier" {
 variable "database_instance_instance_class" {
   type = string
 }
-# *******************************************************************************************************

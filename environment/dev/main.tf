@@ -1,4 +1,4 @@
-# ROUTE TABLE*************************************************************************************
+# Route Table
 module "route_Table" {
   source = "../../modules/network/Route_Table"
   vpc_id = var.vpc_id_route_table
@@ -7,7 +7,7 @@ module "route_Table" {
   subnet_id = var.subnet_id_route_table
   internet_gateway_id = var.internet_gateway_id
 }
-# NATGATEWAY***************************************************************************************
+# Natgateway
 
 module "nat_gateway" {
   source = "../../modules/network/nat_gateway"
@@ -25,13 +25,13 @@ module "keypair" {
   public_key = var.public_key
 }
 
-# internet gateway********************************************************************************
+#Internet Gateway
 module "internet_gateway" {
   source = "../../modules/network/internet_gateway"
   vpc_id = var.vpc_id_internet_gateway
   tags = var.tags_internet_gateway
 }
-# Application load balancer***********************************************************************
+#Application Load balancer
 module "application_load_balancer" {
   source = "../../modules/loadbalancer"
   lb_name = var.lb_name
@@ -61,7 +61,7 @@ module "application_load_balancer" {
   listener_type = var.listener_type
 }
 
-# VPC template used here***************************************************************************
+#VPC template 
 
 module "VPC" {
   source = "../../modules/network/vpc"
@@ -70,8 +70,9 @@ module "VPC" {
   enable_dns_support = var.enable_dns_support
   name = var.name
 }
-# *************************************************************************************************
-# Security Group template used here ***************************************************************
+
+#Security Group
+
 module "Security_Group" {
   source = "../../modules/security_group"
   # security group allow tls
@@ -92,9 +93,7 @@ module "Security_Group" {
 
 }
 
-# *************************************************************************************************
-#                                         FRONTEND TIER
-# ************************************************************************************************* 
+#Frontend Code 
 
 module "Frontend_subnet" {
   source = "../../modules/network/subnets"
@@ -157,9 +156,7 @@ module "AutoScaling" {
 
 
 
-# *************************************************************************************************
-                                    # BACKEND TIER
-# *************************************************************************************************
+#Backend Tier Code
 
 module "Backend_subnet" {
   source = "../../modules/network/subnets"
@@ -218,9 +215,8 @@ module "AutoScaling" {
  
   create_before_destroy = var.create_before_destroy
 }
-# ************************************************************************************************
-#                                       DATABASE    
-# ************************************************************************************************
+
+#Database Tier code
 module "database" {
   source = "../../modules/database"
   database_cluster_identifier = var.database_cluster_identifier
@@ -236,4 +232,3 @@ module "database" {
   database_instance_instance_class = var.database_instance_instance_class
   database_name = var.database_name
 }
-# *************************************************************************************************

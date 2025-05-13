@@ -1,4 +1,4 @@
-# lunch template ****************************************************************************************************
+# lunch template
 variable "name_prefix" {
   type = string
 }
