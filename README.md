@@ -10,6 +10,9 @@
 
 <Latest Update>
 # Recently Added a Terraform.tf vars file
+
 # Added Aurora's Backend (SQL)
+
 #Made some little tweaks to improve code
+
 # Added AMI Ids, etc to terraform.tfvars
